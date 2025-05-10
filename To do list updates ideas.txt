@@ -1,10 +1,19 @@
-افكار تحديثات :
-اضافة رسالة تحذير للمستخدم في حال كان مربع الادخال فارغ وعدم انشاء المهمة له
-اضافة زر جديد عند الضغط عليه يذهب بك الى الصفحة التي يوجد بها الانبت الخاص ب اضافة المهمة
-اذا قام المستخدم ب ادخال مهمة موجودة سابقا يكتب له تحذير باللون الاحمر وهو عبارة عن انك قد اضفت هذه المهمة من قبل وهي موجودة
-معرفة كيفية جعل الكود يحفظ البيانات وجعله يحفظها
-اضافة رسالة تأكيد للعضو في حال اراد حذف المهمة ام لا
-اضافة زر من خلاله يمكنك التعديل على المهمة
-فرز المهام (المكتملة في مكان، والغير مكتملة في مكان اخر)
-زر لحذف جميع المهام بشكل كامل دفعة واحدة
-عرض تاريخ اضافة المهمة
+Show a red warning if the user tries to add a task that already exists.
+
+Save tasks to localStorage for persistence.
+
+Display a confirmation message before deleting a task.
+
+Add an edit button to rename tasks.
+
+Sort tasks by status: completed vs. incomplete.
+
+Add a button to delete all tasks at once.
+
+Show the creation date next to each task.
+
+Search bar to filter tasks by keywords.
+
+Dark mode toggle for better user experience at night.
+
+Allow users to prioritize tasks (e.g., High, Medium, Low).
