@@ -1,72 +1,54 @@
-let myinput = document.getElementById("missinput");
-let mybutt = document.querySelector("#addmissbutton");
-let myDiv = document.querySelector("#missList");
-let myWarn = document.querySelector("#missWarn")
-let mySucc = document.querySelector("#succWarn")
+    const input = document.getElementById("missinput");
+    const addButton = document.getElementById("addmissbutton");
+    const missList = document.getElementById("missList");
+    const missWarn = document.getElementById("missWarn");
+    const succWarn = document.getElementById("succWarn");
+    const delwarn = document.getElementById("delWarn");
 
+    addButton.addEventListener("click", () => {
+    const value = input.value.trim();
 
-// Add new mission to the list
-mybutt.addEventListener("click", function() {
-    
-    // Prevent adding empty tasks
-    
-    if (myinput.value.trim() === "") {
-    myWarn.textContent = "You cannot add an empty task!"
-    myWarn.style.color = "#c0392b"
-    return
+    missWarn.textContent = "";
+    succWarn.textContent = "";
+
+    if (value === "") {
+        missWarn.textContent = "Please enter a mission.";
+        return;
     }
 
-    if (myinput.value.trim().length > 0 ) {
-    mySucc.textContent = "your task has been added successfully !"
-    myWarn.textContent = ""
+    const li = document.createElement("li");
+    li.textContent = value;
+    missList.appendChild(li);
+
+    const delbtn = document.createElement("button")
+    delbtn.textContent ="Delete";
+    delbtn.style.cssText = "border:none;border-radius:4px; padding:9px; background-color:#4a90e2;color:white;"
+    li.appendChild(delbtn)
+
+    
+    delbtn.addEventListener("click",() => {
+        li.remove()
+        delwarn.textContent = "Mission Deleted successfully!"
+        
+        if (delwarn.textContent.trim() != "" ) {
+        succWarn.textContent = ""
+    }    
+        setTimeout(() => {
+        delWarn.textContent = "";
+
+    },5000)
+    })
+
+    
+    
+    succWarn.textContent = "Mission added successfully!";
+    input.value = "";
+
+    setTimeout(() => {
+        succWarn.textContent = "";
+        
+    },5000)
     
 
-}
-    // Create elements
-    let newMisson = document.createElement("li");
-    let deleteMisson = document.createElement("button");
-    let checkBox = document.createElement("input");
-    let lablecheckBox = document.createElement("label");
 
-    // Text content change
-    newMisson.textContent = `${myinput.value}`;
-    deleteMisson.textContent = `Delete the mission`;
-    lablecheckBox.textContent = `Did you finish the mission ?`;
-
-    // Attributes change
-    checkBox.setAttribute("type", "checkbox");
-    newMisson.setAttribute("class", "notcomp");
-
-    // Append children
-    myDiv.appendChild(newMisson);
-    myDiv.appendChild(deleteMisson);
-    myDiv.appendChild(checkBox);
-    myDiv.appendChild(lablecheckBox);
-    lablecheckBox.appendChild(checkBox);
-    myinput.value = ""; // Clear input field
-
-    // Delete the elements
-    deleteMisson.addEventListener("click", function() {
-        newMisson.remove();
-        deleteMisson.remove();
-        checkBox.remove();
-        lablecheckBox.remove();
-    });
-
-    // Change checkbox state
-    checkBox.addEventListener("change", function() {
-        if (checkBox.checked) {
-            newMisson.removeAttribute("notcomp");
-            newMisson.setAttribute("class", "comp");
-        } else {
-            newMisson.removeAttribute("comp");
-            newMisson.setAttribute("class", "notcomp");
-        }
-    });
 });
-
-// delete the placeHolder
-myinput.addEventListener("focus",function(){
-    if (myinput.value = "Add a misson"){
-    myinput.value = "";}
-})

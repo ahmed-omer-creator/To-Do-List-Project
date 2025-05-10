@@ -1,41 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Todo.css">
-    <title>To do list</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>To do list</title>
+<link rel="stylesheet" href="Todo.css">
 </head>
 <body>
 
 <div id="cont">
-            <!-- inputs -->
-            <h1>To do list</h1>
-            <p>Add a New Mission</p>
+    <h1>To Do List</h1>
+    <p>Add a New Mission</p>
 
-            <label for="Add a mission" id="addMissLabel">
-                <p id="addMissP">Enter your mission name here :</p>
-                <input type="text" value="Add a misson" id="missinput">
-                <p id="missWarn"></p>
-                <p id="succWarn"> </p>
-
-            </label>
-
-
-            <button id="addmissbutton">Add the misson!</button>
-            <!-- ==================== -->
+    <label for="Add a mission" id="addMissLabel">
+    <p id="addMissP">Enter your mission name here :</p>
+    <input type="text" placeholder="Add a mission" id="missinput" />
+    <p id="missWarn"></p>
+    <p id="succWarn"></p>
+    </label>
+    
+    <button id="addmissbutton">Add the mission!</button>
 </div>
 
+<div id="allMiss">
+    <h2>Your Missions</h2>
+    <p id="delWarn"></p>
+    <ul id="missList"></ul>
+</div>
 
-    <!-- all missons list -->
-    <div id="allMiss">
-        <!-- this is your all missons  -->
-
-        <ul id="missList">
-
-        </ul>
-    </div>
-    
-    <script src="Todo.js"></script>
+<script src="todo.js"></script>
 </body>
 </html>
